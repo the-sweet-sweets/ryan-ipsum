@@ -47,7 +47,7 @@ ryanIpsum.words = [
 	'it’s like solving a dungeons and dragons problem',
 	'no? nah, it’s cool whatever',
 	'sorry, texting my mom',
-	'oh that\'s my mom calling'
+	'oh that\'s my mom calling',
 	'lets add an image, whoa I’m so excited',
 	'I\'m gonna write a book on that I think',
 	'doo doo',
@@ -71,6 +71,20 @@ ryanIpsum.words = [
 ryanIpsum.randomizer = function (min, max) {
 	return Math.floor(Math.random()*(max - min + 1)) + min;
 }
+
+//when user selects number of paragraphs
+//and selects size of paragraphs
+//value of both number (1 to 6) and size (small, medium, large) from the inputs = the content they receive
+
+//length of paragraphs
+//small = 2 sentences
+//med = 6 sentences
+//large = 12 sentences
+
+//on submit, text is displayed on page
+//plus copy and paste option at bottom -- revealed only on submit
+
+ryanIpsum.words.length
 
 
 ryanIpsum.init = function() {
