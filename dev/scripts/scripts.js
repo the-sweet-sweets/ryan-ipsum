@@ -68,9 +68,35 @@ ryanIpsum.quotes = [
 	'WILDCARD!'
 ]
 
+ryanIpsum.randomizer = function (min, max) {
+	return Math.floor(Math.random()*(max - min + 1)) + min;
+}
+
 //when user selects number of paragraphs
 //and selects size of paragraphs
 //value of both number (1 to 6) and size (small, medium, large) from the inputs = the content they receive
+$('form').submit(function(e) {
+	e.preventDefault();
+	var paragraphs = $('.num').val();
+	var size = $('.size').val();
+
+	// establish: how many words in a sentence (3-10) -- randomize plus insert ','
+	var minWord = 3;
+	var maxWord = 10;
+	var randomizer = Math.floor(Math.random()*(maxWord - minWord + 1)) + minWord;
+
+	// how the functions work: once we receive the inputs, 
+	// size: tells the function how many sentences it needs to create
+
+	for (i = 0; i > randomizer; i++) {
+		var sentence = Math.floor(Math.random() * ryanIpsum.quotes.length);
+		console.log(sentence);
+	}
+
+	// size variable determines how many sentences in a paragraph, needs to talk to the randomizer to determine how many words will be in a sentence
+	// from there, number of paragraphs determines how many times the paragraph size function runs
+});
+
 
 //length of paragraphs
 //small = 2 sentences
@@ -80,22 +106,12 @@ ryanIpsum.quotes = [
 //on submit, text is displayed on page
 //plus copy and paste option at bottom -- revealed only on submit (handlebars time)
 
-// establish: how many words in a sentence (3-10) -- randomize plus insert ','
-var minWord = 3;
-var maxWord = 10;
-var randomizer = Math.floor(Math.random()*(maxWord - minWord + 1)) + minWord;
-
-// how the functions work: once we receive the inputs, 
-// size: tells the function how many sentences it needs to create
-
-for (i = 0; i > randomizer; i++) {
-	var sentence = Math.floor(Math.random() * ryanIpsum.quotes.length);
-	console.log(sentence);
-}
 
 // number: tells the function how many times it needs to run to create new paragraphs -- a loop here
 
 //plus konami code for ryan vid
+
+// ryanIpsum.words.length
 
 
 
