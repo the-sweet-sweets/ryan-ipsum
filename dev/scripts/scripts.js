@@ -1,6 +1,6 @@
 var ryanIpsum = {};
 
-ryanIpsum.words = [
+ryanIpsum.quotes = [
 	'scoot', 
 	'woof', 
 	'oopsy doodle',
@@ -68,10 +68,6 @@ ryanIpsum.words = [
 	'WILDCARD!'
 ]
 
-ryanIpsum.randomizer = function (min, max) {
-	return Math.floor(Math.random()*(max - min + 1)) + min;
-}
-
 //when user selects number of paragraphs
 //and selects size of paragraphs
 //value of both number (1 to 6) and size (small, medium, large) from the inputs = the content they receive
@@ -82,9 +78,25 @@ ryanIpsum.randomizer = function (min, max) {
 //large = 12 sentences
 
 //on submit, text is displayed on page
-//plus copy and paste option at bottom -- revealed only on submit
+//plus copy and paste option at bottom -- revealed only on submit (handlebars time)
 
-ryanIpsum.words.length
+// establish: how many words in a sentence (3-10) -- randomize plus insert ','
+var minWord = 3;
+var maxWord = 10;
+var randomizer = Math.floor(Math.random()*(maxWord - minWord + 1)) + minWord;
+
+// how the functions work: once we receive the inputs, 
+// size: tells the function how many sentences it needs to create
+
+for (i = 0; i > randomizer; i++) {
+	var sentence = Math.floor(Math.random() * ryanIpsum.quotes.length);
+	console.log(sentence);
+}
+
+// number: tells the function how many times it needs to run to create new paragraphs -- a loop here
+
+//plus konami code for ryan vid
+
 
 
 ryanIpsum.init = function() {
