@@ -68,6 +68,11 @@ ryanIpsum.words = [
 	'WILDCARD!'
 ]
 
+ryanIpsum.randomizer = function (min, max) {
+	return Math.floor(Math.random()*(max - min + 1)) + min;
+}
+
+
 ryanIpsum.init = function() {
 
 }
@@ -75,3 +80,5 @@ ryanIpsum.init = function() {
 $(function() {
 	ryanIpsum.init()
 });
+
+
