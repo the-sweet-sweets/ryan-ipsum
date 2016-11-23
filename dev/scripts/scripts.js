@@ -71,10 +71,20 @@ ryanIpsum.words = [
 ryanIpsum.randomizer = function (min, max) {
 	return Math.floor(Math.random()*(max - min + 1)) + min;
 }
-
 //when user selects number of paragraphs
 //and selects size of paragraphs
 //value of both number (1 to 6) and size (small, medium, large) from the inputs = the content they receive
+$('form').submit(function(e) {
+	e.preventDefault();
+	var paragraphs = $('.num').val();
+	var size = $('.size').val();
+
+	
+
+	// size variable determines how many sentences in a paragraph, needs to talk to the randomizer to determine how many words will be in a sentence
+	// from there, number of paragraphs determines how many times the paragraph size function runs
+});
+
 
 //length of paragraphs
 //small = 2 sentences
@@ -84,7 +94,9 @@ ryanIpsum.randomizer = function (min, max) {
 //on submit, text is displayed on page
 //plus copy and paste option at bottom -- revealed only on submit
 
-ryanIpsum.words.length
+// ryanIpsum.words.length
+
+
 
 
 ryanIpsum.init = function() {
