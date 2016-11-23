@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Ryan Ipsum</title>
 	<link rel="stylesheet" href="public/styles/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
 	<header>
@@ -11,12 +13,26 @@
 		<h2>I'm just a teenage dirtbag baby</h2>
 	</header>
 	<main>
-		
+		<form action="">
+			<label for="number">Number of paragraphs</label>
+			<input type="range" id="number" name="number" min="1" max="6">
+
+			<label for="size">Size of paragraphs</label>
+			<input type="range" id="size" name="size" min="1" max="3">
+
+			<input type="submit" value="Generate that badboy">
+		</form>
+
+		<section class="ipsumResult">
+			
+		</section>
+
 	</main>
 	<footer>
 		<p>Coded by the Sweet Sweets (aka Heather Pierce and Lauren Greenway)</p>
 	</footer>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="public/scripts/scripts.js"></script>
 </body>
 </html>
