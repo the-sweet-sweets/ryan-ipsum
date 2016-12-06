@@ -68,59 +68,50 @@ ryanIpsum.quotes = [
 	'WILDCARD!'
 ]
 
-ryanIpsum.randomizer = function (min, max) {
-	return Math.floor(Math.random()*(max - min + 1)) + min;
-}
-
-//when user selects number of paragraphs
-//and selects size of paragraphs
-//value of both number (1 to 6) and size (small, medium, large) from the inputs = the content they receive
-$('form').submit(function(e) {
-	e.preventDefault();
-	var paragraphs = $('.num').val();
-	var size = $('.size').val();
-
-	// establish: how many words in a sentence (3-10) -- randomize plus insert ','
-	var minWord = 3;
-	var maxWord = 10;
-	var randomizer = Math.floor(Math.random()*(maxWord - minWord + 1)) + minWord;
-
-	// how the functions work: once we receive the inputs, 
-	// size: tells the function how many sentences it needs to create
-
-	for (i = 0; i > randomizer; i++) {
-		var sentence = Math.floor(Math.random() * ryanIpsum.quotes.length);
-		console.log(sentence);
-	}
-
-	// size variable determines how many sentences in a paragraph, needs to talk to the randomizer to determine how many words will be in a sentence
-	// from there, number of paragraphs determines how many times the paragraph size function runs
-});
-
-
-//length of paragraphs
-//small = 2 sentences
-//med = 6 sentences
-//large = 12 sentences
-
-//on submit, text is displayed on page
-//plus copy and paste option at bottom -- revealed only on submit (handlebars time)
-
-
-// number: tells the function how many times it needs to run to create new paragraphs -- a loop here
-
 //plus konami code for ryan vid
 
-// ryanIpsum.words.length
+
+//http://jsfiddle.net/gabrieleromanato/khx7w/
+//https://github.com/f/loremjs/blob/master/lorem.js
+//https://gist.github.com/rviscomi/1479649
+//http://dev-notes.com/code.php?q=37
 
 
+const number = parseInt($('.num').val());
+const size = parseInt($('.size').val())*3;
 
-ryanIpsum.init = function() {
+//basically the HTML range slider is useless to get the correct value, so we need to use either http://jqueryui.com/slider/ or http://rangeslider.js.org/
 
+function sentenceConstruct() {
+	ryanIpsum.quotes.sort(function() { 
+		return 0.2 - Math.random(); 
+	});
+	const sentences = ryanIpsum.quotes.slice(0,3).join(' ')+'.';
+	return sentences;
+};
+
+//length of paragraph
+function paragraphSize() {
+	console.log(size);
+	for (var i = i; i <= size; i++) {
+		console.log(size);
+		console.log(i);
+		sentenceConstruct(i);
+	}
+}
+
+//number of paragraphs
+function paragraphNumber() {
+	for (var i = i; i <= number; i++) {
+		paragraphSize(i);
+	}
 }
 
 $(function() {
-	ryanIpsum.init()
+	$('form').submit(function(e) {
+		e.preventDefault();
+		console.log(size);
+		console.log(number);
+		// $('.ipsumResult').html(ryanIpsum.text);
+	});
 });
-
-
