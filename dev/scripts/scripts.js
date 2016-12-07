@@ -68,7 +68,8 @@ ryanIpsum.quotes = [
 	'WILDCARD!',
 	'woof woof, woof woof',
 	'now, we\'re saying fat, but is he just jacked?',
-	'swole, swole, alright swole'
+	'swole, swole, alright swole',
+	'ALRIGHT let\'s go get rraaaaaameeeeennnn'
 ]
 
 //plus konami code for ryan vid
@@ -79,9 +80,6 @@ ryanIpsum.quotes = [
 //https://gist.github.com/rviscomi/1479649
 //http://dev-notes.com/code.php?q=37
 
-
-const number = parseInt($('.num').val());
-const size = parseInt($('.size').val())*3;
 
 //basically the HTML range slider is useless to get the correct value, so we need to use either http://jqueryui.com/slider/ or http://rangeslider.js.org/
 
@@ -118,6 +116,8 @@ function paragraphNumber() {
 $(function() {
 	$('form').submit(function(e) {
 		e.preventDefault();
+		const number = parseInt($('select#number option:selected').val());
+		const size = parseInt($('select#size option:selected').val())*3;
 		console.log(size);
 		console.log(number);
 		// $('.ipsumResult').html(ryanIpsum.text);
