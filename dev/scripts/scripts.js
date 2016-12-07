@@ -83,29 +83,35 @@ ryanIpsum.quotes = [
 
 //basically the HTML range slider is useless to get the correct value, so we need to use either http://jqueryui.com/slider/ or http://rangeslider.js.org/
 
-function sentenceConstruct() {
+// create array to store sentences
+let paragraph = [];
+
+function sentenceConstruct(size) {
 	ryanIpsum.quotes.sort(function() { 
 		return 0.2 - Math.random(); 
 	});
 	let sentences = ryanIpsum.quotes.slice(0,3).join(' ')+'.';
 	return sentences;
+	// run function based on 'size' value and store sentences in paragraph array
+	paragraph.push(sentences);
+	console.log(paragraph);
 };
 
 //length of paragraph
 // sentenceConstruct() needs to run as many times as size's value and return one paragraph of different sentences.
 // from there paragraphNumber() needs to use the value of .num to tell paragraphSize() how many times to run
-function paragraphSize() {
-	console.log(size);
-	for (var i = i; i <= size; i++) {
-		console.log(size);
-		console.log(i);
+function paragraphSize(size) {
+	// console.log(size);
+	for (var i = 1; i <= size; i++) {
+		// console.log(size);
+		// console.log(i);
 		sentenceConstruct(i);
 	}
 }
 
 
 //number of paragraphs
-function paragraphNumber() {
+function paragraphNumber(number) {
 	for (var i = i; i <= number; i++) {
 		paragraphSize(i);
 	}
@@ -121,6 +127,8 @@ $(function() {
 		$('.ipsumResult').css('display','block');
 		console.log(size);
 		console.log(number);
+		paragraphSize(size);
+		paragraphNumber(number);
 		// $('.ipsumResult').html(ryanIpsum.text);
 	});
 
