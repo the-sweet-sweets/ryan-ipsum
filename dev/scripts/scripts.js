@@ -118,9 +118,12 @@ $(function() {
 		e.preventDefault();
 		const number = parseInt($('select#number option:selected').val());
 		const size = parseInt($('select#size option:selected').val())*3;
+		$('.ipsumResult').css('display','block');
 		console.log(size);
 		console.log(number);
 		// $('.ipsumResult').html(ryanIpsum.text);
 	});
+
+	var clipboard = new Clipboard('.copy');
 
 });

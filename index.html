@@ -3,48 +3,57 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Party Ipsum</title>
-	<link rel="stylesheet" href="public/styles/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade|PT+Sans+Narrow" rel="stylesheet">
+	<link rel="stylesheet" href="public/styles/style.css">
 </head>
 <body>
+	<div class="wrapper">
 	<header>
 		<h1>PARTY Ipsum Everybody!</h1>
-		<h2>I'm just a teenage dirtbag baby</h2>
+		<h2>I'm just a teenage dirtbag baby...</h2>
 	</header>
 	<main>
 		<form action="">
-			<label for="number">Number of paragraphs</label>
-			<select name="number" id="number">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-			</select>
+			<div class="numParaSelect">
+				<label for="number">Number of paragraphs</label>
+				<select name="number" id="number">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+				</select>
+			</div>
 
-			<label for="size">Size of paragraphs</label>
-			<select name="size" id="size">
-				<option value="1">One small rude monkey</option>
-				<option value="2">Woof</option>
-				<option value="3">Full hog</option>
-			</select>
+			<div class="sizeParaSelect">
+				<label for="size">Size of paragraphs</label>
+				<select name="size" id="size">
+					<option value="1">One small rude monkey</option>
+					<option value="2">Woof</option>
+					<option value="3">Full hog</option>
+				</select>
+			</div>
 
 			<input type="submit" value="Generate that badboy">
 		</form>
 
-		<section class="ipsumResult">
-			<p>SHOW ME WHAT YOUVE GOT</p>
+		<section class="ipsumResult hidden">
+			<h2>SHOW ME WHAT YOU'VE GOT</h2>
+			<p class="ipsum" id="ipsum">test</p>
+			<button class="copy" data-clipboard-target="#ipsum">Let's just scoot that onto the page</button>
 		</section>
-		<button class="copy">Let's just scoot that onto the page</button>
 
 	</main>
 	<footer>
-		<p>Coded by the Sweet Sweets (aka Heather Pierce and Lauren Greenway)</p>
+		<p>Coded by the Sweet Sweets (aka <a href="http://heatherpierce.co" target="_blank">Heather Pierce</a> and <a href="http://laurengreenway.com" target="_blank">Lauren Greenway</a>)</p>
 	</footer>
+	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="public/scripts/clipboard.min.js"></script>
 	<script src="public/scripts/scripts.js"></script>
 </body>
 </html>
