@@ -96,9 +96,9 @@ function sentenceConstruct() {
 //length of paragraph
 // sentenceConstruct() needs to run as many times as size's value and return one paragraph of different sentences.
 // from there paragraphNumber() needs to use the value of .num to tell paragraphSize() how many times to run
-function paragraphSize() {
-	console.log(size);
-	for (var i = i; i <= size; i++) {
+function paragraphSize(size) {
+	// console.log(size);
+	for (var i = 1; i <= size; i++) {
 		console.log(size);
 		console.log(i);
 		sentenceConstruct(i);
