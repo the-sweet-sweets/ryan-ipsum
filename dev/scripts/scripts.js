@@ -21,11 +21,11 @@ ryanIpsum.quotes = [
 	'doo dod o oooo dooolooo',
 	'we made a boo boo',
 	'kids on the bench, waiting for the cheese',
-	'What the heck is it?',
+	'what the heck is it?',
 	'this fun coloured one… I can’t wait for the day',
 	'you ready for this',
 	'whaaaaaat?!',
-	'were gonna write this in es6, is that okay?',
+	'were gonna write this in ES6, is that okay?',
 	'baaaaahbel... baybel?',
 	'people call it es6 forever and always',
 	'jumping the gun',
@@ -40,22 +40,22 @@ ryanIpsum.quotes = [
 	'there’s a wave in this screen',
 	'blamo',
 	'hit me with a pwd',
-	'Get cider, get footer',
+	'get cider, get footer',
 	'loopyloop',
-	'THERE ARE SO MANY NAMES OF THINGS',
+	'there are so many names of things',
 	'dive into the loop',
-	'it’s like solving a dungeons and dragons problem',
+	'it\'s like solving a dungeons and dragons problem',
 	'no? nah, it’s cool whatever',
 	'sorry, texting my mom',
 	'oh that\'s my mom calling',
-	'lets add an image, whoa I’m so excited',
+	'lets add an image, whoa I\'m so excited',
 	'I\'m gonna write a book on that I think',
 	'doo doo',
 	'an array!',
 	'* hand claps *',
 	'password very strong, 10/10, would use again',
 	'lets connect this badboy up',
-	'let\’s connect all this bad stuff up! I dont know what that meant',
+	'let\’s connect all this bad stuff up! I don\'t know what that meant',
 	'should have cleaned out my downloads, feel so bad',
 	'anyone like this jam?',
 	'crushed it',
@@ -65,7 +65,10 @@ ryanIpsum.quotes = [
 	'BLAMO',
 	'clap clap clap clap clap',
 	'badboy',
-	'WILDCARD!'
+	'WILDCARD!',
+	'woof woof, woof woof',
+	'now, we\'re saying fat, but is he just jacked?',
+	'swole, swole, alright swole'
 ]
 
 //plus konami code for ryan vid
@@ -86,11 +89,13 @@ function sentenceConstruct() {
 	ryanIpsum.quotes.sort(function() { 
 		return 0.2 - Math.random(); 
 	});
-	const sentences = ryanIpsum.quotes.slice(0,3).join(' ')+'.';
+	let sentences = ryanIpsum.quotes.slice(0,3).join(' ')+'.';
 	return sentences;
 };
 
 //length of paragraph
+// sentenceConstruct() needs to run as many times as size's value and return one paragraph of different sentences.
+// from there paragraphNumber() needs to use the value of .num to tell paragraphSize() how many times to run
 function paragraphSize() {
 	console.log(size);
 	for (var i = i; i <= size; i++) {
@@ -100,12 +105,15 @@ function paragraphSize() {
 	}
 }
 
+
 //number of paragraphs
 function paragraphNumber() {
 	for (var i = i; i <= number; i++) {
 		paragraphSize(i);
 	}
 }
+
+
 
 $(function() {
 	$('form').submit(function(e) {
@@ -114,4 +122,5 @@ $(function() {
 		console.log(number);
 		// $('.ipsumResult').html(ryanIpsum.text);
 	});
+
 });
