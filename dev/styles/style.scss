@@ -35,6 +35,7 @@ header {
 		font-family: $headingFont;
 		font-size: 9rem;
 		margin-bottom: 0.5rem;
+		color:black;
 	}
 	h2 {
 		margin-top: 1.5rem;
@@ -60,7 +61,12 @@ form {
 
 .ipsumResult {
 	text-align: center;
+	.again {
+		margin:5rem auto;
+		display: block;
+	}
 }
+
 
 footer {
 	text-align: center;

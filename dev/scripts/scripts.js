@@ -75,12 +75,6 @@ ryanIpsum.quotes = [
 //plus konami code for ryan vid
 
 
-//http://jsfiddle.net/gabrieleromanato/khx7w/
-//https://github.com/f/loremjs/blob/master/lorem.js
-//https://gist.github.com/rviscomi/1479649
-//http://dev-notes.com/code.php?q=37
-
-
 //basically the HTML range slider is useless to get the correct value, so we need to use either http://jqueryui.com/slider/ or http://rangeslider.js.org/
 
 // create array to store sentences
@@ -117,19 +111,46 @@ function paragraphNumber(number) {
 	}
 }
 
+const colours = [
+	'#FF0000',
+	'#FF7F00',
+	'#FFFF00',
+	'#00FF00',
+	'#0000FF',
+	'#4B0082',
+	'#8F00FF'
+]
+
+function colourLoop(colours) {
+	setInterval(function() {
+		for (const colour of colours) {
+			$('h1').velocity({
+				color: colour
+			});
+		}
+	});
+}
+
 
 
 $(function() {
+	colourLoop(colours);
+
 	$('form').submit(function(e) {
 		e.preventDefault();
 		const number = parseInt($('select#number option:selected').val());
 		const size = parseInt($('select#size option:selected').val())*3;
 		$('.ipsumResult').css('display','block');
+		$('form').fadeOut();
 		console.log(size);
 		console.log(number);
 		paragraphSize(size);
 		paragraphNumber(number);
 		// $('.ipsumResult').html(ryanIpsum.text);
+	});
+
+	$('.again').on('click', function(){
+		location.reload(true);
 	});
 
 	var clipboard = new Clipboard('.copy');
