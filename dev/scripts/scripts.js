@@ -59,7 +59,7 @@ ryanIpsum.quotes = [
 	'should have cleaned out my downloads, feel so bad',
 	'anyone like this jam?',
 	'crushed it',
-	'...no? ... okay... MOVING ON',
+	'... no? ... okay ... MOVING ON',
 	'lets google "how often do babies barf?"',
 	'he did go pretty hog on that bottle',
 	'BLAMO',
@@ -78,36 +78,43 @@ ryanIpsum.quotes = [
 //basically the HTML range slider is useless to get the correct value, so we need to use either http://jqueryui.com/slider/ or http://rangeslider.js.org/
 
 // create array to store sentences
-let paragraph = [];
+var paragraph = [];
 
-function sentenceConstruct(size) {
+function sentenceConstruct(i) {
 	ryanIpsum.quotes.sort(function() { 
-		return 0.2 - Math.random(); 
+		// return 0.2 - Math.random(); 
+		Math.floor(Math.random() * ryanIpsum.quotes.length)
 	});
 	let sentences = ryanIpsum.quotes.slice(0,3).join(' ')+'.';
 	return sentences;
 	// run function based on 'size' value and store sentences in paragraph array
-	paragraph.push(sentences);
-	console.log(paragraph);
+	ryanIpsum.paragraph.push(sentences);
 };
+
+
+
+// console.log(paragraph);
 
 //length of paragraph
 // sentenceConstruct() needs to run as many times as size's value and return one paragraph of different sentences.
 // from there paragraphNumber() needs to use the value of .num to tell paragraphSize() how many times to run
 function paragraphSize(size) {
 	// console.log(size);
-	for (var i = 1; i <= size; i++) {
-		// console.log(size);
-		// console.log(i);
+	for (var i = 0; i <= size; i++) {
+		// console.log(size + ' this is size');
+		console.log(i + ' paragraphSize');
 		sentenceConstruct(i);
+		
 	}
 }
 
 
 //number of paragraphs
 function paragraphNumber(number) {
-	for (var i = i; i <= number; i++) {
-		paragraphSize(i);
+	for (var i = 0; i <= number; i++) {
+		// paragraphSize(i);
+		console.log(i + ' paragraphNumber');
+
 	}
 }
 
