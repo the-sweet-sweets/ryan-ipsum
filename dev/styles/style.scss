@@ -29,6 +29,13 @@ a {
 	max-width: 1200px;
 }
 
+button {
+	background-color: black;
+	color:white;
+	border:none;
+	padding:1rem;
+}
+
 header {
 	text-align: center;
 	h1 {
@@ -48,11 +55,12 @@ form {
 		margin-top: 2rem;
 		margin-bottom:2rem;
 		label {
-			margin-right: 1rem;
+			margin-right: 2%;
 		}
 	}
 	input[type='submit'] {
-		background-color:tomato;
+		background-color:black;
+		color:white;
 		border:none;
 		padding:1rem;
 		margin-top: 3rem;
