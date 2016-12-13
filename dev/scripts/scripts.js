@@ -27,12 +27,13 @@ ryanIpsum.quotes = [
 	'whaaaaaat?!',
 	'were gonna write this in ES6, is that okay?',
 	'baaaaahbel... baybel?',
-	'people call it es6 forever and always',
+	'people call it ES6 forever and always',
 	'jumping the gun',
 	'six in one, half a dozen in the other',
 	'this hotdogs really come through today',
 	'and there will be no fanfare because that’s how the command line treats you',
 	'git collabo',
+	'international coffee time',
 	'*fart noise* oops hit the wrong button',
 	'welcome to the danger zone',
 	'neato',
@@ -44,6 +45,7 @@ ryanIpsum.quotes = [
 	'hit me with a pwd',
 	'get cider, get footer',
 	'loopyloop',
+	'three thirty four',
 	'there are so many names of things',
 	'dive into the loop',
 	'it\'s like solving a dungeons and dragons problem',
@@ -65,7 +67,7 @@ ryanIpsum.quotes = [
 	'lets google "how often do babies barf?"',
 	'he did go pretty hog on that bottle',
 	'BLAMO',
-	'clap clap clap clap clap',
+	'*clap clap clap clap clap*',
 	'badboy',
 	'WILDCARD!',
 	'woof woof, woof woof',
@@ -74,12 +76,10 @@ ryanIpsum.quotes = [
 	'ALRIGHT let\'s go get rraaaaaameeeeennnn',
 	'*clap*',
 	'👏🏻',
-	'👏🏻',
-	'👏🏻',
-	'👏🏻',
 	'*clap*',
 	'*clap*',
 	'*clap*',
+	'go hog',
 ]
 
 //plus konami code for ryan vid
@@ -93,14 +93,20 @@ function sentenceConstruct() {
 		return 0.1 - Math.random(); 
 	});
 	var sentences = ryanIpsum.quotes.slice(0,3).join(' ')+'. ';
+
 	// run function based on 'size' value and store sentences in paragraph array
 	paragraph.push(sentences);
+	// function capitalizeFirstLetter(str) {
+	// 	for (var i = 0; i >= ; i++) {
+	// 		return str.charAt(0).toUpperCase() + str.slice(1);
+	// 	}
+	// }
+	// capitalizeFirstLetter(paragraph);
 };
 
 // sentenceConstruct() needs to run as many times as size's value and return one paragraph of different sentences.
 function paragraphSize(size, number) {
-	// console.log(size);
-	var woof = size * number;
+	var woof = size * number - 1;
 	for (var i = 1; i <= woof; i++) {
 		console.log('hell world');
 		sentenceConstruct();
@@ -147,7 +153,10 @@ $(function() {
 		console.log(size);
 		console.log(number);
 		paragraphSize(size, number);
-		$('.ipsum').html('<p>' + allParagraphs + '</p>');
+		for (var item in allParagraphs) {
+		   $("#ipsum").append("<p>" + allParagraphs[item] + '</p>');
+		}
+		// $('.ipsum').html('<p>' + allParagraphs + '</p>');
 	});
 
 	$('.again').on('click', function(){
