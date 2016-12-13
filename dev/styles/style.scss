@@ -43,9 +43,16 @@ header {
 		font-size: 9rem;
 		margin-bottom: 0.5rem;
 		color:black;
+		margin-top: 1.5rem;
 	}
 	h2 {
 		margin-top: 1.5rem;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	img {
+		display: inline-block;
+		vertical-align: middle;
 	}
 }
 
