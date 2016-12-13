@@ -39,6 +39,8 @@ ryanIpsum.quotes = [
 	'burgunday',
 	'there’s a wave in this screen',
 	'blamo',
+	'scoot',
+	'that badboy',
 	'hit me with a pwd',
 	'get cider, get footer',
 	'loopyloop',
@@ -69,45 +71,47 @@ ryanIpsum.quotes = [
 	'woof woof, woof woof',
 	'now, we\'re saying fat, but is he just jacked?',
 	'swole, swole, alright swole',
-	'ALRIGHT let\'s go get rraaaaaameeeeennnn'
+	'ALRIGHT let\'s go get rraaaaaameeeeennnn',
+	'*clap*',
+	'👏🏻',
+	'👏🏻',
+	'👏🏻',
+	'👏🏻',
+	'*clap*',
+	'*clap*',
+	'*clap*',
 ]
 
 //plus konami code for ryan vid
 
-
-//basically the HTML range slider is useless to get the correct value, so we need to use either http://jqueryui.com/slider/ or http://rangeslider.js.org/
-
 // create array to store sentences
 var paragraph = ['Ryan ipsum ',];
-var totalParagraphs = [];
+var allParagraphs = [];
 
 function sentenceConstruct() {
 	ryanIpsum.quotes.sort(function() { 
 		return 0.1 - Math.random(); 
 	});
 	var sentences = ryanIpsum.quotes.slice(0,3).join(' ')+'. ';
-	// return sentences;
 	// run function based on 'size' value and store sentences in paragraph array
 	paragraph.push(sentences);
 };
 
-//length of paragraph
 // sentenceConstruct() needs to run as many times as size's value and return one paragraph of different sentences.
-// from there paragraphNumber() needs to use the value of .num to tell paragraphSize() how many times to run
-function paragraphSize(size) {
+function paragraphSize(size, number) {
 	// console.log(size);
-	for (var i = 1; i <= size; i++) {
+	var woof = size * number;
+	for (var i = 1; i <= woof; i++) {
+		console.log('hell world');
 		sentenceConstruct();
 	}
-}
-
-
-//number of paragraphs
-function paragraphNumber(number) {
-	for (var i = 1; i <= number; i++) {
-		paragraphSize();
+	var i,j,temparray;
+	for (i=0,j=paragraph.length; i<j; i+=size) {
+	    temparray = paragraph.slice(i,i+size).join('');
+	    allParagraphs.push(temparray);
 	}
 }
+
 
 const colours = [
 	'#FF0000',
@@ -142,9 +146,8 @@ $(function() {
 		$('form').fadeOut();
 		console.log(size);
 		console.log(number);
-		paragraphSize(size);
-		paragraphNumber(number);
-		// $('.ipsumResult').html(ryanIpsum.text);
+		paragraphSize(size, number);
+		$('.ipsum').html('<p>' + allParagraphs + '</p>');
 	});
 
 	$('.again').on('click', function(){
