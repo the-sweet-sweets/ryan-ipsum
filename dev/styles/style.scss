@@ -53,6 +53,24 @@ header {
 	img {
 		display: inline-block;
 		vertical-align: middle;
+		&:first-of-type {
+			animation:rotate reverse 3s linear infinite;
+		}
+		&:last-of-type {
+			animation:rotate 3s linear infinite;
+		}
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform:rotate(-20deg);
+	}
+	50% {
+		transform:rotate(20deg);
+	}
+	100% {
+		transform:rotate(-20deg);
 	}
 }
 
@@ -81,7 +99,6 @@ form {
 		display: block;
 	}
 }
-
 
 footer {
 	text-align: center;
