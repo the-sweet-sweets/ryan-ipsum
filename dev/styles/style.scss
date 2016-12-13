@@ -29,6 +29,13 @@ a {
 	max-width: 1200px;
 }
 
+button {
+	background-color: black;
+	color:white;
+	border:none;
+	padding:1rem;
+}
+
 header {
 	text-align: center;
 	h1 {
@@ -36,9 +43,16 @@ header {
 		font-size: 9rem;
 		margin-bottom: 0.5rem;
 		color:black;
+		margin-top: 1.5rem;
 	}
 	h2 {
 		margin-top: 1.5rem;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	img {
+		display: inline-block;
+		vertical-align: middle;
 	}
 }
 
@@ -48,11 +62,12 @@ form {
 		margin-top: 2rem;
 		margin-bottom:2rem;
 		label {
-			margin-right: 1rem;
+			margin-right: 2%;
 		}
 	}
 	input[type='submit'] {
-		background-color:tomato;
+		background-color:black;
+		color:white;
 		border:none;
 		padding:1rem;
 		margin-top: 3rem;
