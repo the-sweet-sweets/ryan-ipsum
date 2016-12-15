@@ -143,7 +143,9 @@ function colourLoop(colours) {
 
 $(function() {
 	colourLoop(colours);
-
+	Konami(function() {
+		$('.monkey').toggleClass('hidden', 'display');
+	});
 	$('form').submit(function(e) {
 		e.preventDefault();
 		const number = parseInt($('select#number option:selected').val());
@@ -156,7 +158,6 @@ $(function() {
 		for (var item in allParagraphs) {
 		   $("#ipsum").append("<p>" + allParagraphs[item] + '</p>');
 		}
-		// $('.ipsum').html('<p>' + allParagraphs + '</p>');
 	});
 
 	$('.again').on('click', function(){
@@ -164,5 +165,4 @@ $(function() {
 	});
 
 	var clipboard = new Clipboard('.copy');
-
 });
