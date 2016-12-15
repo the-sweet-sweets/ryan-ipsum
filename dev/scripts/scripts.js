@@ -1,13 +1,13 @@
-var ryanIpsum = {};
+const ryanIpsum = {};
 
 ryanIpsum.quotes = [
-	'scoot', 
-	'woof', 
+	'scoot',
+	'woof',
 	'oopsy doodle',
 	'milk, bread, cheese',
 	'international coffee time',
 	'very important time',
-	'art', 
+	'art',
 	'just like how the call is coming from inside the apartment',
 	'rude monkey tho',
 	'full hog',
@@ -82,39 +82,29 @@ ryanIpsum.quotes = [
 	'go hog',
 ]
 
-//plus konami code for ryan vid
-
 // create array to store sentences
-var paragraph = ['Ryan ipsum ',];
-var allParagraphs = [];
+const paragraph = ['Ryan ipsum ',];
+const allParagraphs = [];
 
 function sentenceConstruct() {
-	ryanIpsum.quotes.sort(function() { 
-		return 0.1 - Math.random(); 
+	ryanIpsum.quotes.sort(function() {
+		return 0.1 - Math.random();
 	});
-	var sentences = ryanIpsum.quotes.slice(0,3).join(' ')+'. ';
-
-	// run function based on 'size' value and store sentences in paragraph array
+	let sentences = ryanIpsum.quotes.slice(0,3).join(' ') + '. ';
+	sentences = sentences.charAt(0).toUpperCase() + sentences.slice(1);
 	paragraph.push(sentences);
-	// function capitalizeFirstLetter(str) {
-	// 	for (var i = 0; i >= ; i++) {
-	// 		return str.charAt(0).toUpperCase() + str.slice(1);
-	// 	}
-	// }
-	// capitalizeFirstLetter(paragraph);
-};
+}
 
 // sentenceConstruct() needs to run as many times as size's value and return one paragraph of different sentences.
 function paragraphSize(size, number) {
-	var woof = size * number - 1;
-	for (var i = 1; i <= woof; i++) {
-		console.log('hell world');
+	const woof = size * number - 1;
+	for (let i = 1; i <= woof; i++) {
 		sentenceConstruct();
 	}
-	var i,j,temparray;
-	for (i=0,j=paragraph.length; i<j; i+=size) {
-	    temparray = paragraph.slice(i,i+size).join('');
-	    allParagraphs.push(temparray);
+	let i,j,temparray;
+	for (let i = 0,j = paragraph.length; i < j; i += size) {
+		temparray = paragraph.slice(i,i + size).join('');
+		allParagraphs.push(temparray);
 	}
 }
 
@@ -127,7 +117,7 @@ const colours = [
 	'#0000FF',
 	'#4B0082',
 	'#8F00FF'
-]
+];
 
 function colourLoop(colours) {
 	setInterval(function() {
@@ -140,23 +130,21 @@ function colourLoop(colours) {
 }
 
 
-
-$(function() {
+$(function () {
 	colourLoop(colours);
-	Konami(function() {
-		$('.monkey').toggleClass('hidden', 'display');
+	//plus konami code for ryan vid
+	Konami(function () {
+		$('.monkey').toggleClass('hidden', 'display').css('transform', 'rotate(90deg)');
 	});
-	$('form').submit(function(e) {
+	$('form').submit(function (e) {
 		e.preventDefault();
 		const number = parseInt($('select#number option:selected').val());
-		const size = parseInt($('select#size option:selected').val())*3;
+		const size = parseInt($('select#size option:selected').val()) * 3;
 		$('.ipsumResult').css('display','block');
 		$('form').fadeOut();
-		console.log(size);
-		console.log(number);
 		paragraphSize(size, number);
 		for (var item in allParagraphs) {
-		   $("#ipsum").append("<p>" + allParagraphs[item] + '</p>');
+			$('#ipsum').append('<p>' + allParagraphs[item] + '</p>');
 		}
 	});
 
@@ -164,5 +152,5 @@ $(function() {
 		location.reload(true);
 	});
 
-	var clipboard = new Clipboard('.copy');
+	const clipboard = new Clipboard('.copy');
 });
