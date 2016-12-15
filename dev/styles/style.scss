@@ -43,7 +43,7 @@ header {
 	text-align: center;
 	h1 {
 		font-family: $headingFont;
-		font-size: 9rem;
+		font-size: 12vh;
 		margin-bottom: 0.5rem;
 		color:black;
 		margin-top: 1.5rem;
@@ -52,6 +52,7 @@ header {
 		margin-top: 1.5rem;
 		display: inline-block;
 		vertical-align: middle;
+		font-size: 3rem;
 	}
 	img {
 		display: inline-block;
@@ -107,4 +108,60 @@ footer {
 	text-align: center;
 	font-size: 1.8rem;
 	margin-top: 4rem;
+}
+
+@media (max-width: 938px) {
+	header {
+		h1 {
+			font-size: 10vh;
+		}
+		img {
+			width:15%;
+		}
+	}
+}
+
+@media (max-width: 788px) {
+	.wrapper {
+		width:85%;
+	}
+}
+
+@media (max-width:554px) {
+	header {
+		img {
+			width:13%;
+		}
+		h2 {
+			font-size: 2.5rem;
+		}
+		h1 {
+			font-size: 8vh;
+		}
+	}
+}
+
+@media (max-width: 438px) {
+	header {
+		h1 {
+			font-size: 6vh;
+		}
+		img {
+			width:11%;
+		}
+		h2 {
+			font-size: 2rem;
+		}
+	}
+}
+
+@media (max-width: 369px) {
+	header {
+		h1 {
+			font-size: 5.5vh;
+		}
+		img {
+			display: none;
+		}
+	}
 }
