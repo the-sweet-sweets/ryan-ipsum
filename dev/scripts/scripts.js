@@ -45,9 +45,11 @@ ryanIpsum.quotes = [
 	'hit me with a pwd',
 	'get cider, get footer',
 	'loopyloop',
+	'sweet sweet',
 	'three thirty four',
 	'there are so many names of things',
 	'dive into the loop',
+	'👏🏻',
 	'it\'s like solving a dungeons and dragons problem',
 	'no? nah, it’s cool whatever',
 	'sorry, texting my mom',
@@ -63,6 +65,7 @@ ryanIpsum.quotes = [
 	'should have cleaned out my downloads, feel so bad',
 	'anyone like this jam?',
 	'crushed it',
+	'👏🏻',
 	'... no? ... okay ... MOVING ON',
 	'lets google "how often do babies barf?"',
 	'he did go pretty hog on that bottle',
@@ -80,6 +83,8 @@ ryanIpsum.quotes = [
 	'*clap*',
 	'*clap*',
 	'go hog',
+	'sweet sweet boy',
+	'mouth bones',
 ]
 
 // create array to store sentences
